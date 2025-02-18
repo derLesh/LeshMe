@@ -33,7 +33,7 @@ jobs:
                 SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
                 SSH_HOST: ${{ secrets.SSH_HOST }}
                 SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
-                SSH_KEY: ${{ secrets.SSH_KEY }}
+                SSH_PORT: ${{ secrets.SSH_PORT }}
               run: |
                 # SSH-Schlüssel einrichten
                 mkdir -p ~/.ssh
