@@ -9,7 +9,6 @@ interface ContributionDay {
 
 export default function GitHubContributions() {
     const [contributions, setContributions] = useState<ContributionDay[]>([]);
-    const [hoveredDay, setHoveredDay] = useState<string | null>(null);
 
     useEffect(() => {
         const fetchContributions = async () => {
@@ -17,7 +16,7 @@ export default function GitHubContributions() {
                 const response = await fetch('/api/github-contributions');
                 const data = await response.json();
                 const weeks = data.data.user.contributionsCollection.contributionCalendar.weeks;
-                const allDays = weeks.flatMap((week: any) => week.contributionDays);
+                const allDays = weeks.flatMap((week: { contributionDays: ContributionDay[] }) => week.contributionDays);
                 
                 // Nur die letzten 365 Tage filtern
                 const today = new Date();
@@ -56,8 +55,6 @@ export default function GitHubContributions() {
                         ${getColorByCount(day.contributionCount)}
                         transition-all duration-200 ease-in-out
                         hover:opacity-100 hover:scale-110
-                        ${hoveredDay === day.date ? 'opacity-100 scale-110' : 'opacity-100'}
-                        
                     `}
                 />
             ))}

@@ -1,7 +1,23 @@
 import { NextResponse } from 'next/server';
 
 // Cache-Variable für die Daten
-let cachedData: any = null;
+let cachedData: {
+    data: {
+        user: {
+            contributionsCollection: {
+                contributionCalendar: {
+                    totalContributions: number;
+                    weeks: {
+                        contributionDays: {
+                            contributionCount: number;
+                            date: string;
+                        }[];
+                    }[];
+                };
+            };
+        };
+    };
+} | null = null;
 let lastCacheTime: number | null = null;
 
 // 24 Stunden in Millisekunden

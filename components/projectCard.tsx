@@ -2,7 +2,6 @@
 
 import { useState, useRef, type MouseEvent } from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import { useTheme } from 'next-themes';
 import Image from 'next/image';
 
 interface Position {
@@ -43,7 +42,6 @@ const ProjectCard = ({
   const [opacity, setOpacity] = useState(0);
   const [focused, setFocused] = useState(false);
   const divRef = useRef<HTMLDivElement>(null);
-  const { theme } = useTheme();
 
   const handleMouseMove = (e: MouseEvent) => {
     if (!divRef.current || focused) return;

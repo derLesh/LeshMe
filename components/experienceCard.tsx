@@ -87,23 +87,12 @@ export default function ExperienceCard({ name, description, type, startDate, end
                     <div className="flex flex-row items-center gap-2">
                         <p className="text-base text-neutral-500 group-hover:text-neutral-200 group-hover:font-semibold transition-colors duration-200">{experienceYears()} years</p>
                         <p className="text-sm text-neutral-500 opacity-0 group-hover:opacity-100 transition-opacity duration-200">{startDate} - {endDate ? endDate : "Present"}</p>
+                        {description && (
+                            <></>
+                        )}
                     </div>
                 </div>
             </div>
-
-
-            {/* <div className="relative flex flex-col space-y-3">
-                <div className="flex w-full items-center justify-between">
-                    <div className="flex items-center gap-2">
-                        {icon && (
-                            <div></div>
-                            // <Image src={icon} alt={name} width={24} height={24} />
-                        )}
-                        <h1 className="text-lg font-medium">{name}</h1>
-                    </div>
-                    <p className="text-sm text-neutral-500">{startDate} - {endDate}</p>
-                </div>
-            </div> */}
         </div>
     )
 }

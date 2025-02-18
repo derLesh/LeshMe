@@ -1,5 +1,4 @@
 import Bluesky from "@/icons/bluesky";
-import Discord from "@/icons/discord";
 import Twitter from "@/icons/twitter";
 import Link from "next/link";
 import AsciiBackdrop from "@/components/start/ascii-backdrop";
