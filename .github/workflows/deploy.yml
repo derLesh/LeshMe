@@ -23,7 +23,7 @@ jobs:
 
             - name: Create environment file
               run: |
-                  echo "GITHUB_TOKEN=${{ secrets.GITHUB_GRAPHQL_TOKEN }}" >> .env
+                  echo "GITHUB_TOKEN=${{ secrets.GH_GRAPHQL_TOKEN }}" >> .env
 
             - name: Build the application
               run: npm run build
