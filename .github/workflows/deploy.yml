@@ -44,7 +44,6 @@ jobs:
                 ssh -o StrictHostKeyChecking=no -p $SSH_PORT $SSH_USER@$SSH_HOST "echo 'SSH connection successful'"
 
                 # Dateien übertragen
-                cd web
                 rsync -avz --delete -e "ssh -p $SSH_PORT" --exclude="node_modules" --exclude=".git" --exclude=".github" ./ $SSH_USER@$SSH_HOST:/home/Web/LeshMe
 
                 # Abhängigkeiten installieren und PM2 neu starten
