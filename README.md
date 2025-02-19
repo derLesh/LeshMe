@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
 
-## Getting Started
+<a href="https://lesh.me">
+    <img src="public/leshme-icon.png" alt="LeshMe Logo" height="60" />
+</a>
+<br />
+<p>
+<b>Personal Portfolio Website</b>
+</p>
 
-First, run the development server:
+<a href="https://lesh.me">Website</a>
+<span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+<a href="https://lesh.me/#projects">Projects</a>
+<span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+<a href="https://lesh.me/#experiences">Experience</a>
+<span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+<a href="https://twitter.com/derlesh">Twitter (X)</a>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+</div>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<div align="center">
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+![Nextjs 14](https://img.shields.io/badge/Next.js&nbsp;14-000000?logo=nextdotjs&logoColor=ffffff&style=flat)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind&nbsp;CSS-38BDF8?logo=tailwindcss&logoColor=ffffff&style=flat)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=ffffff&style=flat)
+![Lucide Icons](https://img.shields.io/badge/Lucide&nbsp;Icons-7928CA?logo=lucide&logoColor=ffffff&style=flat)
+![shadcn/ui](https://img.shields.io/badge/shadcn/ui-000000?logo=shadcn&logoColor=ffffff&style=flat)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+</div>
 
-## Learn More
+My personal website and portfolio contains an overview of my projects and what technologies I've used.
+It's a refresh of my old portfolio with a new look and feel and a small easter egg.
 
-To learn more about Next.js, take a look at the following resources:
+## 📦 Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [**Next.js**](https://nextjs.org/) - React framework
+- [**Tailwind CSS**](https://tailwindcss.com/) - Utility-first CSS framework
+- [**TypeScript**](https://www.typescriptlang.org/) - Static type system
+- [**Lucide Icons**](https://lucide.dev/) - Icon library
+- [**shadcn/ui**](https://ui.shadcn.com/) - Component library
+- [**svgl**](https://svgl.app/) - SVG logo library
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
