@@ -4,6 +4,18 @@ import python from "@/icons/python";
 import tauri from "@/icons/tauri";
 export const projects: Project[] = [
     {
+        title: "kurz",
+        description: "🔗 URL shortening and text sharing service.",
+        url: "https://kurz.lesh.me",
+        githubUrl: "https://github.com/derLesh/kurz",
+        tags: ["NextJS", "TailwindCSS", "Drizzle", "Turso"],
+        mainTech: {
+            icon: nextjs,
+            url: "https://nextjs.org/",
+            title: "NextJS"
+        },
+    },
+    {
         title: "Schedulr",
         description: "📅 GamesDoneQuick event scheduler with reminders",
         url: "https://schedulr.lesh.me",
@@ -13,15 +25,13 @@ export const projects: Project[] = [
             icon: nextjs,
             url: "https://nextjs.org/",
             title: "NextJS"
-        },
-        latest: true,
-        updated: true
+        }
     },
     {
         title: "SimpsonsOnAir",
         description: "⏰ Sends a notification every day at 12:00 PM EST to the user on social media what episodes are airing today on ProSieben.",
         url: "https://twitter.com/SimpsonsOnAir",
-        githubUrl: "https://github.com/derLesh/SimpsonsOnAir",
+        // githubUrl: "https://github.com/derLesh/SimpsonsOnAir",
         tags: ["Python", "BS4", "SQLite"],
         mainTech: {
             icon: python,

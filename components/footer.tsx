@@ -9,7 +9,7 @@ export default function Footer() {
 
     return (
         <footer className="my-10">
-            <div className="container mx-auto">
+            <div className="container mx-auto px-4 md:px-0">
                 <div className="flex justify-between items-center gap-2">
                     <p className="text-center text-sm">{currentYear} • Lesh</p>
                     <div className="flex justify-center items-center gap-4">

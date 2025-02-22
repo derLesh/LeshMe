@@ -34,6 +34,8 @@ import twitch from "@/icons/twitch";
 import discord from "@/icons/discord";
 import reddit from "@/icons/reddit";
 import discordjs from "@/icons/discordjs";
+import drizzle from "@/icons/drizzle";
+import turso from "@/icons/turso";
 
 const languages: Experience[] = [
     {
@@ -167,6 +169,18 @@ const frameworks: Experience[] = [
         icon: {
             default: express,
         },
+    },
+    {
+        name: "Auth.js",
+        description: "Auth.js is an open-source authentication library for Node.js and TypeScript.",
+        type: ExperienceType.Library,
+        startDate: "2024",
+    },
+    {
+        name: "Better-Auth",
+        description: "Better-Auth is an open-source authentication library for Node.js and TypeScript.",
+        type: ExperienceType.Library,
+        startDate: "2025",
     }
 ]
 
@@ -178,6 +192,15 @@ const libraries: Experience[] = [
         startDate: "2024",
         icon: {
             default: prisma,
+        },
+    },
+    {
+        name: "Drizzle",
+        description: "Drizzle is an open-source database toolkit for Node.js and TypeScript.",
+        type: ExperienceType.Library,
+        startDate: "2025",
+        icon: {
+            default: drizzle,
         },
     },
     {
@@ -236,6 +259,15 @@ const databases: Experience[] = [
         endDate: "2021",
         icon: {
             default: mysql,
+        },
+    },
+    {
+        name: "Turso",
+        description: "Turso is a relational database management system. It is a popular choice for web applications.",
+        type: ExperienceType.Database,
+        startDate: "2025",
+        icon: {
+            default: turso,
         },
     }
 ]
