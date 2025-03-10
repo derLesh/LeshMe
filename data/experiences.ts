@@ -36,6 +36,7 @@ import reddit from "@/icons/reddit";
 import discordjs from "@/icons/discordjs";
 import drizzle from "@/icons/drizzle";
 import turso from "@/icons/turso";
+import cursor from "@/icons/cursor";
 
 const languages: Experience[] = [
     {
@@ -296,6 +297,9 @@ const tools: Experience[] = [
         description: "Cursor is a code editor.",
         type: ExperienceType.Tool,
         startDate: "2024",
+        icon: {
+            default: cursor,
+        },
     },
     {
         name: "Unity",
