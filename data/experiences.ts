@@ -37,6 +37,7 @@ import discordjs from "@/icons/discordjs";
 import drizzle from "@/icons/drizzle";
 import turso from "@/icons/turso";
 import cursor from "@/icons/cursor";
+import betterauth from "@/icons/betterauth";
 
 const languages: Experience[] = [
     {
@@ -182,6 +183,9 @@ const frameworks: Experience[] = [
         description: "Better-Auth is an open-source authentication library for Node.js and TypeScript.",
         type: ExperienceType.Library,
         startDate: "2025",
+        icon: {
+            default: betterauth,
+        },
     }
 ]
 
