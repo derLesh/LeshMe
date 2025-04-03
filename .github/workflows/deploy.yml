@@ -59,32 +59,56 @@ jobs:
                   --exclude=".env*" \
                   ./ deployment-target:/home/Apps/Webapps/LeshMe/
 
+            - name: Detect Node.js and PM2 paths
+              id: detect_paths
+              run: |
+                echo "Suche nach Node.js und PM2 auf dem Server..."
+                
+                # npm-Pfad ermitteln
+                NPM_PATH=$(ssh deployment-target "find ~/.nvm -path \"*/bin/npm\" | head -n 1")
+                if [ -z "$NPM_PATH" ]; then
+                  echo "WARNUNG: Konnte npm nicht finden"
+                  NPM_PATH="npm"  # Fallback
+                fi
+                echo "npm_path=$NPM_PATH" >> $GITHUB_OUTPUT
+                
+                # PM2-Pfad ermitteln
+                PM2_PATH=$(ssh deployment-target "find ~/.nvm -path \"*/bin/pm2\" | head -n 1")
+                if [ -z "$PM2_PATH" ]; then
+                  echo "PM2 nicht gefunden, versuche Installation..."
+                  ssh deployment-target "export NVM_DIR=\"\$HOME/.nvm\" && . \"\$NVM_DIR/nvm.sh\" && npm install -g pm2"
+                  PM2_PATH=$(ssh deployment-target "find ~/.nvm -path \"*/bin/pm2\" | head -n 1")
+                  
+                  if [ -z "$PM2_PATH" ]; then
+                    echo "WARNUNG: PM2 konnte nicht gefunden oder installiert werden"
+                    PM2_PATH="pm2"  # Fallback
+                  fi
+                fi
+                echo "pm2_path=$PM2_PATH" >> $GITHUB_OUTPUT
+                
+                echo "Pfade ermittelt: npm=$NPM_PATH, pm2=$PM2_PATH"
+
             - name: Setup application on server
               run: |
                 ssh deployment-target << EOF
-                  export NVM_DIR="$HOME/.nvm"
-                  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-                   
                   cd /home/Apps/Webapps/LeshMe
-                  npm ci --production
+                  ${{ steps.detect_paths.outputs.npm_path }} ci --production
                   
-                  # Prüfen, ob der Prozess existiert und entsprechend handeln
-                  if pm2 list | grep -q "LeshMe"; then
-                    echo "Process exists - Reloading"
-                    pm2 reload LeshMe || pm2 restart LeshMe
+                  if ${{ steps.detect_paths.outputs.pm2_path }} list | grep -q "LeshMe"; then
+                    echo "Prozess existiert - wird neugestartet"
+                    ${{ steps.detect_paths.outputs.pm2_path }} reload LeshMe || ${{ steps.detect_paths.outputs.pm2_path }} restart LeshMe
                   else
-                    echo "Process does not exist - starting"
-                    pm2 start npm --name "LeshMe" -- start
+                    echo "Prozess existiert nicht - wird neu erstellt"
+                    ${{ steps.detect_paths.outputs.pm2_path }} start npm --name "LeshMe" -- start
                   fi
                   
-                  pm2 save
+                  ${{ steps.detect_paths.outputs.pm2_path }} save
                 EOF
 
             - name: Verify deployment
               run: |
-                echo "Verifying deployment..."
-                # Hier könnten Sie einen Health-Check einfügen
-                ssh deployment-target "pm2 status LeshMe"
+                echo "Verifiziere Deployment..."
+                ssh deployment-target "${{ steps.detect_paths.outputs.pm2_path }} status LeshMe"
 
             - name: Deployment notification
               if: always()
