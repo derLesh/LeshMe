@@ -35,6 +35,7 @@ jobs:
                 SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
                 SSH_HOST: ${{ secrets.SSH_HOST }}
                 SSH_PORT: ${{ secrets.SSH_PORT }}
+                PROJECT_NAME: LeshMe
               run: |
                 # SSH-Verzeichnis und Schlüssel sicher einrichten
                 mkdir -p ~/.ssh
@@ -57,15 +58,23 @@ jobs:
                   --exclude=".git" \
                   --exclude=".github" \
                   --exclude=".env*" \
-                  ./ deployment-target:/home/Apps/Webapps/LeshMe
+                  ./ deployment-target:/home/Apps/Webapps/$PROJECT_NAME
 
             - name: Setup application on server
               run: |
                 ssh deployment-target << 'EOF'
-                  cd /home/Apps/Webapps/LeshMe
+                  cd /home/Apps/Webapps/$PROJECT_NAME
                   npm ci --production
-                  pm2 delete LeshMe || true
-                  pm2 start npm --name "LeshMe" -- start
+                  
+                  # Prüfen, ob der Prozess existiert und entsprechend handeln
+                  if pm2 list | grep -q "$PROJECT_NAME"; then
+                    echo "Process exists - Reloading"
+                    pm2 reload $PROJECT_NAME || pm2 restart $PROJECT_NAME
+                  else
+                    echo "Process does not exist - starting"
+                    pm2 start npm --name "$PROJECT_NAME" -- start
+                  fi
+                  
                   pm2 save
                 EOF
 
@@ -73,7 +82,7 @@ jobs:
               run: |
                 echo "Verifying deployment..."
                 # Hier könnten Sie einen Health-Check einfügen
-                ssh deployment-target "pm2 status LeshMe"
+                ssh deployment-target "pm2 status $PROJECT_NAME"
 
             - name: Deployment notification
               if: always()
