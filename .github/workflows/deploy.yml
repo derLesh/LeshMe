@@ -90,25 +90,54 @@ jobs:
 
             - name: Setup application on server
               run: |
-                ssh deployment-target << EOF
-                  cd /home/Apps/Webapps/LeshMe
-                  ${{ steps.detect_paths.outputs.npm_path }} ci --production
+                ssh deployment-target << 'EOF'
+                  # NVM-Umgebung richtig initialisieren
+                  export NVM_DIR="$HOME/.nvm"
+                  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
                   
-                  if ${{ steps.detect_paths.outputs.pm2_path }} list | grep -q "LeshMe"; then
+                  # Wichtig: Node.js Version explizit aktivieren
+                  nvm use 22 || nvm use 18 || nvm use --lts || nvm use default
+                  
+                  # Sicherstellen dass Node.js im Pfad ist
+                  NODE_PATH=$(which node)
+                  if [ -z "$NODE_PATH" ]; then
+                    echo "FEHLER: Node.js konnte nicht gefunden werden"
+                    exit 1
+                  fi
+                  echo "Node.js gefunden: $NODE_PATH"
+                  
+                  # Zur Applikation wechseln
+                  cd /home/Apps/Webapps/LeshMe
+                  
+                  # Abhängigkeiten installieren
+                  npm ci --production
+                  
+                  # Prüfen, ob der Prozess existiert und entsprechend handeln
+                  if pm2 list | grep -q "LeshMe"; then
                     echo "Prozess existiert - wird neugestartet"
-                    ${{ steps.detect_paths.outputs.pm2_path }} reload LeshMe || ${{ steps.detect_paths.outputs.pm2_path }} restart LeshMe
+                    pm2 reload LeshMe || pm2 restart LeshMe
                   else
                     echo "Prozess existiert nicht - wird neu erstellt"
-                    ${{ steps.detect_paths.outputs.pm2_path }} start npm --name "LeshMe" -- start
+                    pm2 start npm --name "LeshMe" -- start
                   fi
                   
-                  ${{ steps.detect_paths.outputs.pm2_path }} save
+                  pm2 save
                 EOF
 
             - name: Verify deployment
               run: |
-                echo "Verifiziere Deployment..."
-                ssh deployment-target "${{ steps.detect_paths.outputs.pm2_path }} status LeshMe"
+                ssh deployment-target << 'EOF'
+                  # NVM-Umgebung auch hier initialisieren
+                  export NVM_DIR="$HOME/.nvm"
+                  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+                  
+                  # Version anzeigen und Status prüfen
+                  echo "Node.js version: $(node -v)"
+                  echo "PM2 version: $(pm2 -v)"
+                  
+                  # Status anzeigen
+                  pm2 status LeshMe
+                EOF
 
             - name: Deployment notification
               if: always()
