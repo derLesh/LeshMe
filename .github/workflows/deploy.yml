@@ -62,6 +62,9 @@ jobs:
             - name: Setup application on server
               run: |
                 ssh deployment-target << EOF
+                  export NVM_DIR="$HOME/.nvm"
+                  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+                   
                   cd /home/Apps/Webapps/LeshMe
                   npm ci --production
                   
