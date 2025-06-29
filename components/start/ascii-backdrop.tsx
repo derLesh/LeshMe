@@ -22,6 +22,31 @@ export default function AsciiBackdrop() {
         const ctx = canvas.getContext('2d');
         if (!ctx) return;
 
+        let particles: Particle[] = [];
+
+        const init = () => {
+            particles = [];
+            const width = 70;
+            const height = 40;
+            const spacing = 40;
+            const totalWidth = width * spacing;
+            const totalHeight = height * spacing;
+            const startX = (window.innerWidth - totalWidth) / 2;
+            const startY = (window.innerHeight - totalHeight) / 2;
+
+            for (let y = 0; y < height; y++) {
+                for (let x = 0; x < width; x++) {
+                    particles.push({
+                        x: startX + x * spacing,
+                        y: startY + y * spacing,
+                        baseX: startX + x * spacing,
+                        baseY: startY + y * spacing,
+                        char: ASCII_CHARS[Math.floor(Math.random() * ASCII_CHARS.length)]
+                    });
+                }
+            }
+        };
+
         const resize = () => {
             const scale = window.devicePixelRatio;
             canvas.width = window.innerWidth * scale;
@@ -29,31 +54,10 @@ export default function AsciiBackdrop() {
             canvas.style.width = `${window.innerWidth}px`;
             canvas.style.height = `${window.innerHeight}px`;
             ctx.scale(scale, scale);
+            init();
         };
         resize();
         window.addEventListener('resize', resize);
-
-        const width = 70;
-        const height = 40;
-        const spacing = 40;
-
-        const particles: Particle[] = [];
-        const totalWidth = width * spacing;
-        const totalHeight = height * spacing;
-        const startX = (window.innerWidth - totalWidth) / 2;
-        const startY = (window.innerHeight - totalHeight) / 2;
-
-        for (let y = 0; y < height; y++) {
-            for (let x = 0; x < width; x++) {
-                particles.push({
-                    x: startX + x * spacing,
-                    y: startY + y * spacing,
-                    baseX: startX + x * spacing,
-                    baseY: startY + y * spacing,
-                    char: ASCII_CHARS[Math.floor(Math.random() * ASCII_CHARS.length)]
-                });
-            }
-        }
 
         const handleMouseMove = (e: MouseEvent) => {
             mouse.current.x = e.clientX + window.scrollX;

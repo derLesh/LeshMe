@@ -4,7 +4,7 @@ import Experiences from "@/components/start/experiences";
 import Contact from "@/components/start/contact";
 export default function Home() {
     return (
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-10 overflow-hidden">
             <Hero />
             <Projects />
             <Experiences />
