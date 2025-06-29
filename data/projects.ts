@@ -19,8 +19,8 @@ export const projects: Project[] = [
         title: "Schedulr",
         description: "📅 GamesDoneQuick event scheduler with reminders",
         url: "https://schedulr.lesh.me",
-        githubUrl: "https://github.com/derLesh/Schedulr",
-        tags: ["React", "Typescript", "TailwindCSS", "NextJS", "Prisma", "PostgreSQL"],
+        // githubUrl: "https://github.com/derLesh/Schedulr",
+        tags: ["NextJS", "TailwindCSS", "Prisma", "PostgreSQL"],
         mainTech: {
             icon: nextjs,
             url: "https://nextjs.org/",
@@ -43,7 +43,7 @@ export const projects: Project[] = [
         title: "ComfyLog",
         description: "✍ Twitch Chat Logger for Moderators and Broadcasters",
         url: "https://log.lesh.me",
-        githubUrl: "https://github.com/derLesh/ComfyLog",
+        // githubUrl: "https://github.com/derLesh/ComfyLog",
         tags: ["NextJS", "TailwindCSS", "TMI.JS", "PostgreSQL"],
         mainTech: {
             icon: nextjs,
@@ -55,7 +55,7 @@ export const projects: Project[] = [
         title: "Cards",
         description: "📚 Create memorization cards for your flashcards",
         // url: "https://cards.lesh.me",
-        githubUrl: "https://github.com/derLesh/Cards",
+        // githubUrl: "https://github.com/derLesh/Cards",
         tags: ["Tauri", "NextJS", "TailwindCSS"],
         mainTech: {
             icon: tauri,
