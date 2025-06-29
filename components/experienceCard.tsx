@@ -76,7 +76,7 @@ export default function ExperienceCard({ name, description, type, startDate, end
                     )}
                 </div>
                 <div className="flex flex-col gap-1">
-                    <div className="flex flex-row items-center gap-4">
+                    <div className="flex flex-row flex-wrap items-center gap-x-4 gap-y-1">
                         <h1 className="text-lg font-medium">{name}</h1>
                         <span
                             className="rounded-full bg-neutral-100 px-2 text-xs font-mono dark:bg-neutral-800"
@@ -85,7 +85,7 @@ export default function ExperienceCard({ name, description, type, startDate, end
                         </span>
                     </div>
                     <div className="flex flex-row items-center gap-2">
-                        <p className="text-base text-neutral-500 group-hover:text-neutral-200 group-hover:font-semibold transition-colors duration-200">{experienceYears()} years</p>
+                        <p className="whitespace-nowrap text-base text-neutral-500 group-hover:text-neutral-200 group-hover:font-semibold transition-colors duration-200">{experienceYears()} years</p>
                         <p className="text-sm text-neutral-500 opacity-0 group-hover:opacity-100 transition-opacity duration-200">{startDate} - {endDate ? endDate : "Present"}</p>
                         {description && (
                             <></>
