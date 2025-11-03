@@ -38,6 +38,7 @@ import drizzle from "@/icons/drizzle";
 import turso from "@/icons/turso";
 import cursor from "@/icons/cursor";
 import betterauth from "@/icons/betterauth";
+import authjs from "@/icons/authjs";
 
 const languages: Experience[] = [
     {
@@ -177,6 +178,9 @@ const frameworks: Experience[] = [
         description: "Auth.js is an open-source authentication library for Node.js and TypeScript.",
         type: ExperienceType.Library,
         startDate: "2024",
+        icon: {
+            default: authjs,
+        },
     },
     {
         name: "Better-Auth",
