@@ -57,13 +57,13 @@ const config: Config = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
       fontSize: {
-        'hero': ['clamp(2rem, 40vw, 40rem)', {
+        'hero': ['clamp(6rem, -2rem + 25vw, 40rem)', {
           lineHeight: '1',
-          letterSpacing: '-0.01em',
+          letterSpacing: '-0.02em',
           fontWeight: '900'
         }],
-		'hero-sub': ['clamp(1rem, 20vw, 3rem)', {
-			lineHeight: '1',
+		'hero-sub': ['clamp(1rem, 0.5rem + 1.5vw, 4rem)', {
+			lineHeight: '1.2',
 			letterSpacing: '-0.01em',
 			fontWeight: '400'
 		}]
