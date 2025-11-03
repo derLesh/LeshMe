@@ -7,14 +7,14 @@ export default function Navbar() {
                 <Link href="/" className="text-2xl font-bold font-inter-sans" data-umami-event="clicked-home-link">
                     Lesh
                 </Link>
-                <div className="flex items-center space-x-4">
+                {/* <div className="flex items-center space-x-4">
                     <Link href="#projects" className="font-inter-sans hover:text-neutral-300 transition-colors duration-300" data-umami-event="jumped-to-projects">
                         Projects
                     </Link>
                     <Link href="#experiences" className="font-inter-sans hover:text-neutral-300 transition-colors duration-300" data-umami-event="jumped-to-experiences">
                         Experiences
                     </Link>
-                </div>
+                </div> */}
             </div>
         </nav>
     );
