@@ -15,10 +15,10 @@ export default function Contact() {
                     <h2 className="text-2xl font-mono text-neutral-300">Send me a direct message</h2>
                 </div>
                 <div className="flex flex-row items-center justify-center gap-8 mt-8">
-                    <Link href="https://bsky.app/profile/lesh.me" target="_blank" className="text-white hover:text-[#1185FE] duration-300 transition-all hover:rotate-12 hover:scale-110">
+                    <Link href="https://bsky.app/profile/lesh.me" target="_blank" className="text-white hover:text-[#1185FE] duration-300 transition-all hover:rotate-12 hover:scale-110" data-umami-event="clicked-bluesky-link">
                         <Bluesky color="currentColor" className="w-8 h-8"/>
                     </Link>
-                    <Link href="https://x.com/lesh_me" target="_blank" className="text-white hover:text-[#1DA1F2] duration-300 transition-all hover:rotate-12 hover:scale-110">
+                    <Link href="https://twitter.com/derlesh" target="_blank" className="text-white hover:text-[#1DA1F2] duration-300 transition-all hover:rotate-12 hover:scale-110" data-umami-event="clicked-twitter-link">
                         <Twitter color="currentColor" className="w-8 h-8"/>
                     </Link>
                 </div>

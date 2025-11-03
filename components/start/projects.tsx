@@ -17,7 +17,7 @@ export default function Projects() {
                 ))}
             </div>
             <Button variant="link" className="group w-fit mb-5 font-bold text-neutral-500 hover:text-white translate-x-1 transition-colors duration-300">
-                <Link href="https://github.com/derlesh?tab=repositories" target="_blank" className="flex items-center">
+                <Link href="https://github.com/derlesh?tab=repositories" target="_blank" className="flex items-center" data-umami-event="clicked-more-projects-link">
                     More <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-2 transition-transform duration-300" />
                 </Link>
             </Button>

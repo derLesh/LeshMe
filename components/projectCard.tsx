@@ -109,6 +109,7 @@ const ProjectCard = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-[6px] font-bold decoration-neutral-500 decoration-dotted underline-offset-[5px] hover:underline"
+                data-umami-event={`clicked-${title}-project-link`}
               >
                 <span>{title}</span>
                 <ArrowUpRight
@@ -133,6 +134,7 @@ const ProjectCard = ({
               target="_blank"
               rel="noopener noreferrer"
               className="opacity-75 transition-opacity duration-100 hover:opacity-100"
+              data-umami-event={`clicked-${title}-github-link`}
             >
               {githubUrl && (
                 <GithubIcon height={16} />
