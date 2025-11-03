@@ -1,7 +1,6 @@
 import { Project } from "@/types/projects";
 import nextjs from "@/icons/nextjs";
 import python from "@/icons/python";
-import tauri from "@/icons/tauri";
 export const projects: Project[] = [
     {
         title: "kurz",
@@ -14,6 +13,18 @@ export const projects: Project[] = [
             url: "https://nextjs.org/",
             title: "NextJS"
         },
+    },
+    {
+        title: "Merge7TV",
+        description: "🔗 Combine two 7TV emote sets together.",
+        url: "https://merge7tv.lesh.me",
+        githubUrl: "https://github.com/derLesh/Merge7TV",
+        tags: ["NextJS", "TailwindCSS", "GraphQL"],
+        mainTech: {
+            icon: nextjs,
+            url: "https://nextjs.org/",
+            title: "NextJS"
+        }
     },
     {
         title: "Schedulr",
@@ -49,18 +60,6 @@ export const projects: Project[] = [
             icon: nextjs,
             url: "https://nextjs.org/",
             title: "NextJS"
-        }
-    },
-    {
-        title: "Cards",
-        description: "📚 Create memorization cards for your flashcards",
-        // url: "https://cards.lesh.me",
-        // githubUrl: "https://github.com/derLesh/Cards",
-        tags: ["Tauri", "NextJS", "TailwindCSS"],
-        mainTech: {
-            icon: tauri,
-            url: "https://tauri.app/",
-            title: "Tauri"
         }
     },
     {
