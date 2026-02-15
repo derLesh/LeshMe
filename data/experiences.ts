@@ -39,6 +39,7 @@ import turso from "@/icons/turso";
 import cursor from "@/icons/cursor";
 import betterauth from "@/icons/betterauth";
 import authjs from "@/icons/authjs";
+import GodotEngine from "@/icons/godot";
 
 const languages: Experience[] = [
     {
@@ -178,6 +179,7 @@ const frameworks: Experience[] = [
         description: "Auth.js is an open-source authentication library for Node.js and TypeScript.",
         type: ExperienceType.Library,
         startDate: "2024",
+        endDate: "2025",
         icon: {
             default: authjs,
         },
@@ -199,6 +201,7 @@ const libraries: Experience[] = [
         description: "Prisma is an open-source database toolkit for Node.js and TypeScript.",
         type: ExperienceType.Library,
         startDate: "2024",
+        endDate: "2025",
         icon: {
             default: prisma,
         },
@@ -217,6 +220,7 @@ const libraries: Experience[] = [
         description: "Socket.io is a library for managing server state in React.",
         type: ExperienceType.Library,
         startDate: "2024",
+        endDate: "2025",
         icon: {
             default: socketio,
         },
@@ -275,6 +279,7 @@ const databases: Experience[] = [
         description: "Turso is a relational database management system. It is a popular choice for web applications.",
         type: ExperienceType.Database,
         startDate: "2025",
+        endDate: "2025",
         icon: {
             default: turso,
         },
@@ -316,6 +321,15 @@ const tools: Experience[] = [
         startDate: "2022",
         icon: {
             default: unity,
+        },
+    },
+    {
+        name: "Godot",
+        description: "Godot is a game engine.",
+        type: ExperienceType.Tool,
+        startDate: "2026",
+        icon: {
+            default: GodotEngine,
         },
     },
     {
@@ -381,6 +395,7 @@ const ais: Experience[] = [
         description: "Claude is a company that provides a range of AI services.",
         type: ExperienceType.AI,
         startDate: "2024",
+        endDate: "2024",
         icon: {
             default: claude,
         },
@@ -390,6 +405,7 @@ const ais: Experience[] = [
         description: "DeepSeek is a company that provides a range of AI services.",
         type: ExperienceType.AI,
         startDate: "2024",
+        endDate: "2024",
         icon: {
             default: deepseek,
         },
