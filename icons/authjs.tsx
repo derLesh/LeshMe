@@ -27,8 +27,55 @@ const Authjs = (props: SVGProps<SVGSVGElement>) => (
       d="M96.243 124.475c-3.635.321-12.832-1.283-17.323-5.133-4.823-4.134-7.379-9.624-7.379-17.645 0-9.95 8.983-20.532 21.495-20.21 11.883.304 19.898 7.002 21.494 17.644.833 5.553-.016 8.222-.676 10.295-.102.323-.2.631-.286.933-.321 1.07-.77 3.401 0 4.171.769.77 12.511 12.084 18.286 17.644.534.642 1.604 2.246 1.604 3.529v6.096c0 .962-.257 1.283-1.283 1.283h-12.833c-.748-.107-2.246-.834-2.246-2.887 0-2.189-.233-2.511-.7-3.156-.08-.111-.168-.232-.262-.373-.642-.963-1.925-.963-3.208-.963-1.283 0-2.246-.321-2.887-.962-.642-.642-.642-1.604-.321-2.887.321-1.284 0-2.567-.642-2.888a7.71 7.71 0 0 1-.353-.194c-.704-.4-1.827-1.038-3.176-.768-1.604.321-3.85 0-5.133-1.283-1.283-1.284-2.887-2.32-4.17-2.246Zm-8.662-24.381a4.812 4.812 0 1 0 0-9.625 4.812 4.812 0 0 0 0 9.625Z"
       clipRule="evenodd"
     />
+    <defs>
+      <linearGradient
+        id="authjs__a"
+        x1="19.57"
+        x2="97.527"
+        y1="96.564"
+        y2="15.078"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#45FFC8" />
+        <stop offset="1" stopColor="#1DBBF1" />
+      </linearGradient>
+      <linearGradient
+        id="authjs__b"
+        x1="73.786"
+        x2="170.671"
+        y1="143.724"
+        y2="190.884"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#D14AE8" />
+        <stop offset=".552" stopColor="#B628E3" />
+        <stop offset="1" stopColor="#8315FD" />
+      </linearGradient>
+      <linearGradient
+        id="authjs__c"
+        x1="155.914"
+        x2="155.914"
+        y1="21.815"
+        y2="182.542"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#20ABF5" />
+        <stop offset=".398" stopColor="#2A8CC3" />
+        <stop offset="1" stopColor="#A104DC" />
+      </linearGradient>
+      <linearGradient
+        id="authjs__d"
+        x1="90.148"
+        x2="129.287"
+        y1="99.452"
+        y2="138.912"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#FE5B01" />
+        <stop offset="1" stopColor="#FFB200" />
+      </linearGradient>
+    </defs>
   </svg>
 );
 
 export default Authjs;
-
