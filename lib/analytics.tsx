@@ -27,7 +27,6 @@ export function trackEvent(eventName: string, data?: UmamiEventData): void {
   }
   if (process.env.NODE_ENV !== "production") {
     // Fallback im Dev-Modus, falls Umami noch nicht geladen ist
-    // eslint-disable-next-line no-console
     console.debug("[umami.trackEvent]", eventName, data);
   }
 }
