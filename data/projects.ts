@@ -1,18 +1,31 @@
 import { Project } from "@/types/projects";
 import nextjs from "@/icons/nextjs";
 import python from "@/icons/python";
+import Android from "@/icons/android";
 export const projects: Project[] = [
+    // {
+    //     title: "kurz",
+    //     description: "🔗 URL shortening and text sharing service.",
+    //     url: "https://kurz.lesh.me",
+    //     githubUrl: "https://github.com/derLesh/kurz",
+    //     tags: ["NextJS", "TailwindCSS", "Drizzle", "Turso"],
+    //     mainTech: {
+    //         icon: nextjs,
+    //         url: "https://nextjs.org/",
+    //         title: "NextJS"
+    //     },
+    // },
     {
-        title: "kurz",
-        description: "🔗 URL shortening and text sharing service.",
-        url: "https://kurz.lesh.me",
-        githubUrl: "https://github.com/derLesh/kurz",
-        tags: ["NextJS", "TailwindCSS", "Drizzle", "Turso"],
+        title: "Chatter",
+        description: "💬 An alternative Twitch chat client for Android",
+        url: "",
+        githubUrl: "https://github.com/derLesh/Chatter",
+        tags: ["Android", "Kotlin", "Jetpack Compose"],
         mainTech: {
-            icon: nextjs,
-            url: "https://nextjs.org/",
-            title: "NextJS"
-        },
+            icon: Android,
+            url: "https://developer.android.com/",
+            title: "Android"
+        }
     },
     {
         title: "Merge7TV",

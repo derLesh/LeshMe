@@ -1,6 +1,8 @@
 import { Experience, ExperienceType } from "@/types/experiences";
 import javascript from "@/icons/javascript";
 import typescript from "@/icons/typescript";
+import kotlin from "@/icons/kotlin";
+import rust from "@/icons/rust";
 import python from "@/icons/python";
 import cpp from "@/icons/cpp";
 import java from "@/icons/java";
@@ -8,6 +10,8 @@ import csharp from "@/icons/csharp";
 import github from "@/icons/github";
 import react from "@/icons/react";
 import nextjs from "@/icons/nextjs";
+import astro from "@/icons/astro";
+import android from "@/icons/android";
 import tauri from "@/icons/tauri";
 import tailwindcss from "@/icons/tailwindcss";
 import svelte from "@/icons/svelte";
@@ -58,6 +62,25 @@ const languages: Experience[] = [
         startDate: "2024",
         icon: {
             default: typescript,
+        },
+    },
+    {
+        name: "Kotlin",
+        description: "Kotlin is a statically typed programming language used to build Android applications.",
+        type: ExperienceType.Language,
+        startDate: "2026",
+        icon: {
+            default: kotlin,
+        },
+    },
+    {
+        name: "Rust",
+        description: "Rust is a systems programming language focused on memory safety and performance.",
+        type: ExperienceType.Language,
+        startDate: "2025",
+        endDate: "2026",
+        icon: {
+            default: rust,
         },
     },
     {
@@ -140,6 +163,16 @@ const frameworks: Experience[] = [
             default: nextjs,
         },
     },
+    {
+        name: "Astro",
+        description: "Astro is a web framework for building content-driven websites with interactive UI components.",
+        type: ExperienceType.Frontend,
+        startDate: "2025",
+        endDate: "2026",
+        icon: {
+            default: astro,
+        },
+    },
     // {
     //     name: "SvelteKit",
     //     description: "SvelteKit is a framework for building server-side rendered (SSR) web applications.",
@@ -152,6 +185,7 @@ const frameworks: Experience[] = [
         description: "Tauri is a framework for building desktop applications using Rust.",
         type: ExperienceType.Frontend,
         startDate: "2023",
+        endDate: "2026",
         icon: {
             default: tauri,
         },
@@ -170,6 +204,7 @@ const frameworks: Experience[] = [
         description: "Express is a web application framework for Node.js.",
         type: ExperienceType.Backend,
         startDate: "2024",
+        endDate: "2026",
         icon: {
             default: express,
         },
@@ -251,6 +286,7 @@ const databases: Experience[] = [
         description: "PostgreSQL is a powerful, open source object-relational database system.",
         type: ExperienceType.Database,
         startDate: "2024",
+        endDate: "2026",
         icon: {
             default: postgresql,
         },
@@ -279,7 +315,7 @@ const databases: Experience[] = [
         description: "Turso is a relational database management system. It is a popular choice for web applications.",
         type: ExperienceType.Database,
         startDate: "2025",
-        endDate: "2025",
+        endDate: "2026",
         icon: {
             default: turso,
         },
@@ -301,6 +337,7 @@ const tools: Experience[] = [
         description: "VSCode is a code editor.",
         type: ExperienceType.Tool,
         startDate: "2018",
+        endDate: "2026",
         icon: {
             default: vscode,
         },
@@ -310,6 +347,7 @@ const tools: Experience[] = [
         description: "Cursor is a code editor.",
         type: ExperienceType.Tool,
         startDate: "2024",
+        endDate: "2026",
         icon: {
             default: cursor,
         },
@@ -319,6 +357,7 @@ const tools: Experience[] = [
         description: "Unity is a game engine.",
         type: ExperienceType.Tool,
         startDate: "2022",
+        endDate: "2026",
         icon: {
             default: unity,
         },
@@ -328,6 +367,7 @@ const tools: Experience[] = [
         description: "Godot is a game engine.",
         type: ExperienceType.Tool,
         startDate: "2026",
+        endDate: "2026",
         icon: {
             default: GodotEngine,
         },
@@ -344,6 +384,15 @@ const tools: Experience[] = [
 ]
 
 const other: Experience[] = [
+    {
+        name: "Android",
+        description: "Android is a mobile operating system and application development platform.",
+        type: ExperienceType.OS,
+        startDate: "2011",
+        icon: {
+            default: android,
+        },
+    },
     {
         name: "Windows",
         description: "Windows is a operating system.",
@@ -367,6 +416,7 @@ const other: Experience[] = [
         description: "macOS is a operating system.",
         type: ExperienceType.OS,
         startDate: "2022",
+        endDate: "2026",
         icon: {
             default: apple,
         },
@@ -395,7 +445,6 @@ const ais: Experience[] = [
         description: "Claude is a company that provides a range of AI services.",
         type: ExperienceType.AI,
         startDate: "2024",
-        endDate: "2024",
         icon: {
             default: claude,
         },
@@ -428,6 +477,7 @@ export const apis: Experience[] = [
         description: "Twitter API is a API for the Twitter service.",
         type: ExperienceType.API,
         startDate: "2020",
+        endDate: "2026",
         icon: {
             default: twitter,
         },
@@ -455,6 +505,7 @@ export const apis: Experience[] = [
         description: "Discord API is a API for the Discord service.",
         type: ExperienceType.API,
         startDate: "2022",
+        endDate: "2026",
         icon: {
             default: discord,
         },
@@ -477,6 +528,7 @@ export const software: Experience[] = [
         description: "Premiere Pro is a video editing software.",
         type: ExperienceType.Software,
         startDate: "2022",
+        endDate: "2026",
         // icon: {
         //     // default: premiere,
         // },
@@ -486,6 +538,7 @@ export const software: Experience[] = [
         description: "Photoshop is a image editing software.",
         type: ExperienceType.Software,
         startDate: "2022",
+        endDate: "2026",
         // icon: {
         //     default: photoshop,
         // },
@@ -495,6 +548,7 @@ export const software: Experience[] = [
         description: "Word is a word processing software.",
         type: ExperienceType.Software,
         startDate: "2022",
+        endDate: "2026",
         // icon: {
         //     default: word,
         // },
@@ -504,6 +558,7 @@ export const software: Experience[] = [
         description: "Excel is a spreadsheet software.",
         type: ExperienceType.Software,
         startDate: "2022",
+        endDate: "2026",
         // icon: {
         //     default: excel,
         // },
@@ -513,6 +568,7 @@ export const software: Experience[] = [
         description: "PowerPoint is a presentation software.",
         type: ExperienceType.Software,
         startDate: "2022",
+        endDate: "2026",
         // icon: {
         //     default: powerpoint,
         // },
