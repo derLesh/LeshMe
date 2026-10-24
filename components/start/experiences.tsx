@@ -10,7 +10,7 @@ export default function Experiences() {
                     <GitHubContributions />
                 </div>
                 <div className="relative">
-                    <h1 className="text-4xl font-inter-sans font-bold">Experiences</h1>
+                    <h1 className="text-4xl font-inter-sans font-bold" data-analytics-section="experiences">Experiences</h1>
                     <h2 className="text-lg font-mono text-neutral-300">Everything I have ever used</h2>
                 </div>
             </div>

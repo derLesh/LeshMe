@@ -3,6 +3,7 @@
 import { useState, useRef, type MouseEvent } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
+import { eventAttributes } from '@/lib/analytics';
 
 interface Position {
   x: number;
@@ -109,7 +110,7 @@ const ProjectCard = ({
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-[6px] font-bold decoration-neutral-500 decoration-dotted underline-offset-[5px] hover:underline"
-                data-umami-event={`clicked-${title}-project-link`}
+                {...eventAttributes("project-click", { project: title, destination: "website" })}
               >
                 <span>{title}</span>
                 <ArrowUpRight
@@ -128,18 +129,18 @@ const ProjectCard = ({
                 {latest ? 'latest' : 'updated'}
               </span>
             )}
-            <a
-              href={githubUrl}
-              title={`View ${title} repository on GitHub`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="opacity-75 transition-opacity duration-100 hover:opacity-100"
-              data-umami-event={`clicked-${title}-github-link`}
-            >
-              {githubUrl && (
+            {githubUrl && (
+              <a
+                href={githubUrl}
+                title={`View ${title} repository on GitHub`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="opacity-75 transition-opacity duration-100 hover:opacity-100"
+                {...eventAttributes("project-click", { project: title, destination: "repository" })}
+              >
                 <GithubIcon height={16} />
-              )}
-            </a>
+              </a>
+            )}
           </div>
         </div>
         <p className="truncate text-sm dark:text-neutral-400">{description}</p>
@@ -151,6 +152,7 @@ const ProjectCard = ({
               rel="noopener noreferrer"
               className="mr-1"
               title={mainTech.title}
+              {...eventAttributes("technology-click", { project: title, technology: mainTech.title })}
             >
               <mainTech.icon height={17} />
             </a>

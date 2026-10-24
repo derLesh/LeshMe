@@ -4,7 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import { UmamiAnalytics } from "@/lib/analytics";
+import { UmamiAnalytics } from "@/components/umami-analytics";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
